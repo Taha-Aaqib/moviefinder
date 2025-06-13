@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Finder</title>
+    <link rel="stylesheet" href="main.css">
+    <!-- Include Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-veryDarkBlue">
+    
+    <div class="flex flex-col space-y-8 mb-20 px-4"> <!-- Added px-4 for horizontal padding -->
+        <div class="flex flex-col space-y-6 w-full max-w-md text-center mx-auto mt-16"> <!-- Ensure it doesn't overflow -->
+            <h1 class="text-center text-2xl md:text-3xl text-red-600 font-bold">Movie Finder</h1> <!-- Responsive font size -->
+            <div class="rounded-full relative group"> <!-- Added group class for parent focus effect -->
+                <input id="input" type="text" placeholder="Search for movies..." class="p-3 hover:shadow-[0_0_10px_3px_rgba(253,224,71,1)] hover:ring-yellow-600 hover:ring-2 px-4 pr-24 w-full rounded-full border-yellow-500 focus:outline-none focus:ring-2 focus:ring-red-600 focus:shadow-[0_0_10px_3px_rgba(255,0,0,1)] duration-300 group-focus-within:scale-105">
+                <button id="search" class="absolute text-2xl bg-yellow-500 right-1 top-1 p-1 px-7 rounded-full text-red-600 group-focus-within:translate-x-3 duration-300"> <!-- group-focus-within added -->
+                    <i class="fa-solid fa-magnifying-glass beat"></i>
+                </button>
+            </div>
+        </div>
+        <div id="spinner" class="hidden flex justify-center items-center mt-8">
+            <i class="fa-solid fa-spinner fa-spin text-4xl text-yellow-500"></i>
+        </div>
+        <div id="buttonsList" class="flex justify-center w-auto gap-4 flex-wrap items-center m-6 space-x-6 text-sm md:text-base md:flex-nowrap md:gap-0">
+            <h1 class="text-yellow-600 text-xl">Sort By:</h1>
+            <button id="all" class="rounded-lg border-2 border-yellow-600 p-1 px-4 text-yellow-600 hover:bg-yellow-600 hover:text-white duration-500 hover:shadow-[0_0_10px_3px_rgba(253,224,71,1)] active:bg-red-600 active:border-red-600 active:shadow-[0_0_10px_3px_rgba(255,0,0,1)]">
+                All
+            </button>
+            <button id="rate" class="rounded-lg border-2 border-yellow-600 p-1 px-4 text-yellow-600 hover:bg-yellow-600 hover:text-white duration-500 hover:shadow-[0_0_10px_3px_rgba(253,224,71,1)] active:bg-red-600 active:border-red-600 active:shadow-[0_0_10px_3px_rgba(255,0,0,1)]">
+                Rating
+            </button>
+            <button id="rel" class="rounded-lg whitespace-nowrap border-2 border-yellow-600 p-1 px-4 text-yellow-600 hover:bg-yellow-600 hover:text-white duration-500 hover:shadow-[0_0_10px_3px_rgba(253,224,71,1)] active:bg-red-600 active:border-red-600 active:shadow-[0_0_10px_3px_rgba(255,0,0,1)]">
+                Release Date
+            </button>
+            <button id="pop" class="rounded-lg border-2 border-yellow-600 p-1 px-4 text-yellow-600 hover:bg-yellow-600 hover:text-white duration-500 hover:shadow-[0_0_10px_3px_rgba(253,224,71,1)] active:bg-red-600 active:border-red-600 active:shadow-[0_0_10px_3px_rgba(255,0,0,1)]">
+                Popularity
+            </button>
+        </div>
+        <div id="movie-results" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-start gap-8 px-10 md:px-14 md:gap-12">
+            <!-- Movie Card 1 -->
+            <!-- <div tabindex="0" class="movie-card flex flex-col h-auto border-4 cursor-pointer border-yellow-600 mx-auto space-y-4 overflow-hidden bg-yellow-300 rounded-xl max-w-xs pb-4 hover:shadow-[0_0_10px_3px_rgba(253,224,71,1)] duration-300 focus:border-red-600 focus:shadow-[0_0_10px_3px_rgba(255,0,0,1)] focus:bg-red-300">
+                <img src="../img/item-1.jpeg" alt="Movie Title 1" class="movie-image rounded-lg w-full min-h-48 ">
+                <h2 class="font-bold text-lg text-center">Movie Title 1</h2>
+                <div class="movie-details hidden duration-300">
+                    <p class="text-gray-700 text-center">Release Date: 2023-01-01</p>
+                    <p class="text-gray-700 text-center">Rating: 8.5</p>
+                    <p class="text-gray-700 text-center">Genre: Action, Adventure</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <script src="movie2.js"></script>
+    <script src="https://kit.fontawesome.com/814a014255.js" crossorigin="anonymous"></script>
+</body>
+</html>
